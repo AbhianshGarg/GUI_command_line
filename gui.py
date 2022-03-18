@@ -33,6 +33,17 @@ def do_command(command):
     command_textbox.insert(tk.END, cmd_errors)
 
 
+def mSave():
+  filename = asksaveasfilename(defaultextension='.txt',filetypes = (('Text files', '*.txt'),('Python files', '*.py *.pyw'),('All files', '*.*')))
+  if filename is None:
+    return
+  file = open (filename, mode = 'w')
+  text_to_save = command_textbox.get("1.0", tk.END)
+  
+  file.write(text_to_save)
+  file.close()
+
+
 frame_URL = tk.Frame(root, pady=10,  bg="grey") # change frame color
 frame_URL.pack()
 # decorative label
@@ -65,5 +76,8 @@ tracert_btn.pack()
 
 nslookup_btn = tk.Button(frame, text="URL nslookup", command=lambda:do_command('nslookup'))
 nslookup_btn.pack()
+
+save = tk.Button(frame, text="Save", command=lambda:mSave())
+save.pack()
 
 root.mainloop()
