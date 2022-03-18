@@ -1,0 +1,10 @@
+nslookup working....
+Server:  NSDC1.cuhsd-int.prv
+Address:  10.31.1.10
+
+Name:    www.pltw.org
+Addresses:  104.18.225.225
+	  104.18.226.225
+
+Non-authoritative answer:
+
